@@ -11,7 +11,9 @@
                 <v-icon>mdi-home</v-icon>
             </v-list-item-action>
             <v-list-item-content>
+              <router-link class = "home-btn" to= "/">
                 <v-list-item-title>Home</v-list-item-title>
+                </router-link>
             </v-list-item-content>
             </v-list-item>
             <v-list-item @click="">
@@ -19,7 +21,19 @@
                 <v-icon>mdi-camera</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-                <v-list-item-title>Picture</v-list-item-title>
+              <router-link class = "camera-btn" to= "/camera">
+                <v-list-item-title>Camera</v-list-item-title>
+                </router-link>
+            </v-list-item-content>
+            </v-list-item>
+            <v-list-item @click="">
+            <v-list-item-action>
+                <v-icon>mdi-map</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <router-link class = "map-btn" to= "/map">
+                <v-list-item-title>Map</v-list-item-title>
+                </router-link>
             </v-list-item-content>
             </v-list-item>
         </v-list>
