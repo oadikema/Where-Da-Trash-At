@@ -14,6 +14,13 @@ class TrashImageSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("image", "trash_density", "google_ml_json", "time_taken", "before_after_cleaning", "description", "location", "id", "url")
 
 
+class LightweightTrashImageSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = TrashImageModel
+        fields = ( "trash_density", "google_ml_json", "time_taken", "before_after_cleaning", "description", "location", "id", "url")
+
+
 
 # class AltTrashImageSerializer(serializers.HyperlinkedModelSerializer):
 
