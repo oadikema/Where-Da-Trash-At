@@ -19,10 +19,12 @@
           <br>Find a spot of trash near you on the Trash Map, pick up the trash, upload a photo of the clean spot, and get even more points for clearing it!
         </p>
         <router-link class="take-picture-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" to="/camera">
-      <v-btn>Take a Picture of Trash</v-btn>
+      <v-btn x-large color = "primary">Take a Picture of Trash</v-btn>
     </router-link>
         <br><br>
-        <v-btn>View Trash Map</v-btn>
+        <router-link class = "view-map" to= "/map">
+        <v-btn x-large color = "primary">View Trash Map</v-btn>
+        </router-link>
       </v-flex>
 
     
@@ -49,5 +51,5 @@ export default {
 </script>
 
 <style scoped>
-#padding-top: 40%;
+
 </style>
