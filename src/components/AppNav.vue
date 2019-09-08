@@ -26,14 +26,17 @@
                 </router-link>
             </v-list-item-content>
             </v-list-item>
-            <v-list-item @click="">
-            <v-list-item-action>
+            <v-list-item href="http://127.0.0.1:5500/public/Sample.html">
+            <v-list-item-action  >
                 <v-icon>mdi-map</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <router-link class = "map-btn" to= "/map">
-                <v-list-item-title>Map</v-list-item-title>
-                </router-link>
+
+              <!-- <router-link class = "map-btn" to= "/map"> -->
+                <v-list-item-title   >Map</v-list-item-title>
+                <!-- </router-link> -->
+
+
             </v-list-item-content>
             </v-list-item>
         </v-list>

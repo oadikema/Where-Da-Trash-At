@@ -22,9 +22,10 @@
       <v-btn x-large color = "primary">Take a Picture of Trash</v-btn>
     </router-link>
         <br><br>
-        <router-link class = "view-map" to= "/map">
-        <v-btn x-large color = "primary">View Trash Map</v-btn>
-        </router-link>
+        <!-- <router-link class = "view-map" to= "http://127.0.0.1:5500/public/Sample.html"> -->
+
+        <v-btn  href="http://127.0.0.1:5500/public/Sample.html"  x-large color = "primary">View Trash Map</v-btn>
+        <!-- </router-link> -->
       </v-flex>
 
     

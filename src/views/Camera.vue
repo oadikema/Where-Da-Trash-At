@@ -19,6 +19,9 @@
 </template>
 
 <script>
+import axios from "axios"
+
+
   export default {
     data () {
       return {
@@ -26,6 +29,7 @@
         x:{ latitude: null, 
             longitude: null
         }
+        
       }
     },
     mounted () {
@@ -36,18 +40,59 @@
           this.$refs.video.srcObject = mediaStream
           this.$refs.video.play()
         })
+        //eslint-disable-next-line
         .catch(error => console.error('getUserMedia() error:', error))
     },
     methods: {
       capture () {
+        var latitude = this.x.latitude;
+        var longitude = this.x.longitude;
           const mediaStreamTrack = this.mediaStream.getVideoTracks()[0]
           const imageCapture = new window.ImageCapture(mediaStreamTrack)
           return imageCapture.takePhoto().then(blob => {
             var reader = new FileReader();
             reader.readAsDataURL(blob); 
             reader.onloadend = function() {
-                var base64data = reader.result;                
-                console.log(base64data);
+                var base64data = reader.result;
+                var index = base64data.indexOf(',') + 1;
+
+
+                base64data = base64data.slice(index)
+                
+                while(base64data.length %4 != 0)
+                {
+                  base64data += "=";
+                }
+                
+
+                // console.log(base64data);
+
+                
+
+                let jsonObject = {
+
+                  image: base64data,
+                  coordinates: [latitude, longitude]
+                }
+
+              
+
+                //eslint-disable-next-line
+                let network_url = "http://10.103.227.77:8000/api/trash_images_post";
+                //eslint-disable-next-line
+                let local_url = 'http://localhost:8000/api/trash_images_post'
+
+                axios.post(network_url, jsonObject)
+                .then(response =>{
+                  // eslint-disable-next-line
+                  console.log(response);
+                })
+                .catch(error => {
+                  // eslint-disable-next-line
+                  console.log(error);
+                })
+
+
                 }
             })
       },
