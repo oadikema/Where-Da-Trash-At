@@ -4,6 +4,9 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('trash_images', views.TrashImageViewSet)
+
+# router.register('images_light', views.LightTrashImageViewSet)
+
 # router.register('alt_trash_images', views.AltTrashView)
 
 

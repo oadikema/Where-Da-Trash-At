@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 import datetime
 
-from .serializers import TrashImageSerializer
+from .serializers import TrashImageSerializer, LightweightTrashImageSerializer
 from .models import TrashImageModel
 
 from rest_framework_gis.filters import DistanceToPointFilter
@@ -46,7 +46,12 @@ client = vision.ImageAnnotatorClient()
 
 class TrashImageViewSet(viewsets.ModelViewSet):
     queryset = TrashImageModel.objects.all()
-    serializer_class = TrashImageSerializer
+    serializer_class = LightweightTrashImageSerializer
+
+class LightTrashImageViewSet(viewsets.ModelViewSet):
+    queryset = TrashImageModel.objects.all()
+    serializer_class = LightweightTrashImageSerializer
+
     
 
 # class AltTrashView(viewsets.ModelViewSet):
@@ -152,7 +157,7 @@ def post_trash_image(request):
 
             location = location_data,
             google_ml_json = shit_json,
-            image = image_view,
+            image = image_base_64_str,
             trash_density = num_trash,
             time_taken = "2019-09-07",
             before_after_cleaning = False,
