@@ -1,0 +1,51 @@
+<template>
+  <div>
+     <v-layout
+      text-center
+      wrap
+      class = "my-10 py-10"
+    >
+
+    <v-flex mb-4>
+        <h1 class="display-2 font-weight-bold mb-3" >
+          Where Da Trash At?
+        </h1>
+        <h3>
+          Incentivizing people to report trash and clean their surroundings. It's the Pokémon Go for sustainability!
+        </h3>
+        <p class="subheading font-weight-regular">
+          <br>Load the web app on your phone, take a photo of a spot of trash, and get points for reporting it. 
+          <br> OR
+          <br>Find a spot of trash near you on the Trash Map, pick up the trash, upload a photo of the clean spot, and get even more points for clearing it!
+        </p>
+        <v-btn>Take a Picture of Trash</v-btn>
+        <br><br>
+        <v-btn>View Trash Map</v-btn>
+      </v-flex>
+
+    
+    
+    
+
+
+
+    </v-layout>
+
+  </div>
+</template>
+
+
+  
+
+
+<script>
+export default {
+  components: {
+  
+  },
+};
+</script>
+
+<style scoped>
+#padding-top: 40%;
+</style>
