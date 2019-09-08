@@ -19,12 +19,15 @@
           this.$refs.video.srcObject = mediaStream
           this.$refs.video.play()
         })
+        .catch(error => console.error('getUserMedia() error:', error))
     },
     methods: {
       capture () {
-        const mediaStreamTrack = this.mediaStream.getVideoTracks()[0]
-        const imageCapture = new window.ImageCapture(mediaStreamTrack)
-        return imageCapture.takePhoto()
+          const mediaStreamTrack = this.mediaStream.getVideoTracks()[0]
+          const imageCapture = new window.ImageCapture(mediaStreamTrack)
+          return imageCapture.takePhoto().then(blob => {
+            console.log(blob)
+  })
       }
     }
   }
